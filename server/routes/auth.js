@@ -31,7 +31,7 @@ router.post("/register", async (req, res) => {
     if (existingUser.rows.length > 0) {
       return res.status(400).json({ error: "Email already exists" });
     } 
-    console.log("user has not been  reated before");
+    console.log("user has not been created before");
 
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
