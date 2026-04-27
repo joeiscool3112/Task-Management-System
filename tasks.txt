@@ -1,0 +1,107 @@
+===== SETUP =====
+[BE] Init Node.js project
+[BE] Setup Express server
+[BE] Setup PostgreSQL connection
+[BE] Setup basic folder
+[BE] Setup environment variables (.env)
+ structure (routes, controllers, models)
+
+[FE] Init React app
+[FE] Setup routing (react-router)
+[FE] Setup API service (axios/fetch)
+[FE] Setup basic layout (sidebar + main)
+
+===== AUTH =====
+[BE] Create users table
+[BE] Hash password (bcrypt)
+[BE] Create register API
+[BE] Create login API
+[BE] Generate JWT token
+[BE] Middleware verify token
+
+[FE] Create login UI
+[FE] Create register UI
+[FE] Handle login API
+[FE] Store token (localStorage)
+[FE] Protect private routes
+
+===== PROJECT =====
+[BE] Create projects table
+[BE] Add user_id foreign key
+[BE] Create POST /projects
+[BE] Create GET /projects
+[BE] Create PATCH /projects/:id
+[BE] Create DELETE /projects/:id
+
+[FE] Create project list UI
+[FE] Create project card UI
+[FE] Create project form UI
+[FE] Call API create project
+[FE] Render project list
+[FE] Open project detail
+[FE] Edit project modal
+[FE] Delete project
+
+===== TASK =====
+[BE] Create tasks table
+[BE] Add proetid foreign key
+[BE] Create POST /tasks
+[BE] Create GET /tasks?project_id
+[BE] Create PATCH /tasks/:id
+[BE] Create DELETE /tasks/:id
+
+[FE] Create task list UI
+[FE] Create task item UI
+[FE] Create task input UI
+[FE] Call API create task
+[FE] Render task list
+[FE] Edit task
+[FE] Delete task
+
+===== STATUS =====
+[BE] Add status field (todo, in_progress, done)
+[BE] Update task status API
+
+[FE] Toggle complete task
+[FE] Filter tasks by status
+[FE] Show status UI (checkbox/tag)
+
+===== DUE DATE =====
+[BE] Add due_date column (DATE)
+[BE] Validate due_date format
+
+[FE] Add date picker
+[FE] Send due_date (YYYY-MM-DD)
+[FE] Show due date
+[FE] Highlight overdue (red)
+[FE] Highlight upcoming (yellow)
+
+===== UX/UI =====
+[FE] Loading spinner
+[FE] Error message UI
+[FE] Success toast
+[FE] Empty state (no task/project)
+
+===== ADVANCED =====
+[FE] Drag & drop task (optional)
+[FE] Search task
+[FE] Sort by due date
+
+===== DEPLOY =====
+[BE] Setup production config
+[BE] Deploy backend (Render/Railway)
+[FE] Build frontend
+[FE] Deploy frontend (Vercel)
+[FE] Connect frontend to backend
+
+===== TEST =====
+[BE] Test create project API
+[BE] Test update project API
+[BE] Test task CRUD API
+[FE] Test create task flow
+[FE] Test login flow
+
+===== CLEANUP =====
+[BE] Handle error middleware
+[BE] Refactor code structure
+[FE] Refactor components
