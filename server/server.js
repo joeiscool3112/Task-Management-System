@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
   res.send("backend is runnging");
 });
 
+
 app.use("/api/auth", authRoutes);
 app.use("/api/projects", projectsRoutes);
 app.use("/api/projects", tasksRoutes);

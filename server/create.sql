@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS tasks;
+DROP TABLE IF EXISTS projects;
+DROP TABLE IF EXISTS users;
+
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
@@ -9,20 +13,20 @@ CREATE TABLE users (
 CREATE TABLE projects (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  description VARCHAR(100),
-  color VARCHAR(50),
-  user_id INTEGER REFERENCES users(id),
+  description TEXT,
+  color VARCHAR(50) DEFAULT '#3b82f6',
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE tasks (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  description VARCHAR(100),
-  status BOOLEAN DEFAULT false,
-  priority VARCHAR(50) DEFAULT 'low',
+  description TEXT,
+  status VARCHAR(20) DEFAULT 'todo' CHECK (status IN ('todo', 'inprogress', 'done')),
+  priority VARCHAR(50) DEFAULT 'medium',
   due_date DATE,
-  project_id INTEGER REFERENCES projects(id),
-  user_id INTEGER REFERENCES users(id),
+  project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
