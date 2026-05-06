@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#00174b",
+                        "surface-container": "#eceef0",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-surface-variant": "#45464d",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#dbe1ff",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary": "#505f76",
+                        "surface-dim": "#d8dadc",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-background": "#191c1e",
+                        "surface-bright": "#f7f9fb",
+                        "surface": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "surface-tint": "#565e74",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-surface": "#191c1e",
+                        "on-primary-fixed": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2d3133",
+                        "secondary-container": "#d0e1fb",
+                        "tertiary": "#000000",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "primary-fixed": "#dae2fd",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary-container": "#54647a",
+                        "outline": "#76777d",
+                        "on-tertiary-fixed-variant": "#003ea8",
+                        "on-tertiary-container": "#497cff",
+                        "primary-container": "#131b2e",
+                        "on-primary": "#ffffff",
+                        "primary": "#000000",
+                        "on-primary-container": "#7c839b",
+                        "background": "#f7f9fb",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#bec6e0",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed": "#00174b",
+                        "on-secondary-fixed": "#0b1c30",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed-variant": "#38485d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "3xl": "64px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "margin": "32px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "h3": ["Inter"],
+                        "h1": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h2": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "h3": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "h1": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "h2": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Application Shell Hidden: Linear/Transactional Page Rule (Login) -->
+<!-- According to "Shell Visibility & Relevance (THE FILTER)", the SideNavBar and TopAppBar 
+         are suppressed for "Login, Sign-up, Onboarding" to prioritize the focused content journey. -->
+<main class="min-h-screen flex items-center justify-center p-margin bg-surface">
+<div class="w-full max-w-[440px]">
+<!-- Branding Header -->
+<div class="text-center mb-xl">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-primary-container rounded-lg mb-md">
+<span class="material-symbols-outlined text-[32px] text-on-primary-fixed" data-icon="task_alt">task_alt</span>
+</div>
+<h1 class="font-h2 text-h2 text-on-surface mb-xs">TaskEngine Pro</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Enterprise Edition</p>
+</div>
+<!-- Login Card -->
+<div class="bg-surface-container-lowest border border-outline-variant p-2xl rounded-lg shadow-sm">
+<form class="space-y-lg">
+<!-- Email Field -->
+<div class="space-y-base">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="email">Email Address</label>
+<div class="relative">
+<input class="w-full px-md py-sm bg-surface-container-low border border-outline-variant rounded-lg font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200" id="email" name="email" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-base">
+<div class="flex justify-between items-center">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="password">Password</label>
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:underline" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<input class="w-full px-md py-sm bg-surface-container-low border border-outline-variant rounded-lg font-body-md text-body-md focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-primary text-on-primary py-md rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity flex items-center justify-center gap-sm" type="submit">
+                        Sign In
+                    </button>
+<!-- Divider -->
+<div class="relative flex items-center py-md">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-md font-label-sm text-label-sm text-outline">OR</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<!-- Secondary SSO Action -->
+<button class="w-full bg-surface border border-outline-variant text-on-surface py-md rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors flex items-center justify-center gap-sm" type="button">
+<img alt="Google Logo" class="w-5 h-5" data-alt="A clean, high-resolution graphic of the Google logo centered on a white background, symbolizing professional integration. The lighting is neutral and even, reflecting a modern corporate software environment that emphasizes security and accessibility. The visual style is crisp, using the classic Google primary colors of blue, red, yellow, and green." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXCjAywKgKk2Lg_gL_PnnkQ0QbrcerojNj_gbSFKtLsPR2T5o7PB9odWCjjMzhCTcxHA7tA8_ByG6CEdvQxlZk5huNPHKQ3AZQXYlQBTQJiNTSecGJVIFnY2uXIeIwR8623AJQjVr2qZQsPHHrJZLZDgaIP-OuHmobma3OA7_qsIsWyrkucgZ_HTYuiqi2fYsQ83My3reyBPCu7BYF7UkV1deJvKi39VcWbttQkec4pFGrwWPUtk8AfYuJX23PivZNgNbIVMYastI"/>
+                        Sign in with SSO
+                    </button>
+</form>
+<!-- Signup Link -->
+<div class="mt-xl text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Don't have an account? 
+                        <a class="text-on-tertiary-container font-label-md hover:underline" href="#">Sign Up</a>
+</p>
+</div>
+</div>
+<!-- Trust Signals -->
+<div class="mt-xl flex flex-col items-center gap-md">
+<div class="flex items-center gap-sm px-md py-xs bg-surface-container-high rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant" data-icon="verified_user">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Enterprise-grade security</span>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex flex-col items-center opacity-40 grayscale hover:grayscale-0 transition-all duration-300">
+<img alt="SOC2 Logo" class="h-8" data-alt="A professional SOC2 compliance badge displayed with high contrast and sharp lines. The setting is a clean, corporate background with soft studio lighting that emphasizes official certification. The palette uses neutral grays and blacks to maintain a serious, trustworthy institutional aesthetic suitable for high-stakes enterprise software." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDanRd6d21n5wh9CbLS1N-qS8lSRIXue1wZ4TuxtY9ZvzqCTGyMULrX0Nyn1Nl-hpw0Aoxyn7O-J-VfUVkkZMTruldr2Jk3gpisyynLnAALLWGfwD_Mjn3ws-0I39J5NCT9owsSxdRU-uqMJ7i8yJKunSH3t6AjqV_IE4fTAt4YBDX-jur6Xbjw0mw3V1dhJ9q8FkAxzEqw-SlnsGbd0WSncTXrn1CDiTeVLk21fnslnjqCopbH-BYoqG7hf-rIy2WPTQFibg6ndaI"/>
+</div>
+<div class="flex flex-col items-center opacity-40 grayscale hover:grayscale-0 transition-all duration-300">
+<img alt="ISO Logo" class="h-8" data-alt="A clear, high-contrast ISO certification mark representing quality and trust. The visual style is minimalist and professional, featuring sharp typography and clean vector edges. It is presented against a pristine white background with subtle depth created by tonal layering, reinforcing the theme of precision and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABya999mSkFdLPc08bU7yX4qzEfRfBaSynYDyhqDqSXXkdMCa3GYujNfTNJa6eV5DAgVkJkOSP_opc1lgipChtfJx2XcGAr2wbk7d0pz0I7vJMrJQ9nZN0qF62-oo0JDlsWhbeO0sTF919vheywUQjsntb8Ezuequt0EdcIPAyRsNOacgsNSSIPX5W63YXGMEmbaWZ3tSKraum8SCG7_-oGYKWh2z9IHNmdniR1EIpmyP8qySMOpheXVAcPC3kkvcPqUCqLqGlly0"/>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-outline text-center mt-md">
+                    By signing in, you agree to our <a class="underline" href="#">Terms of Service</a> and <a class="underline" href="#">Privacy Policy</a>.
+                </p>
+</div>
+</div>
+</main>
+<!-- Visual Background Element (Subtle Gradient Anchor) -->
+<div class="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-secondary-container/20 via-surface to-surface pointer-events-none"></div>
+</body></html>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './index.css';
 import './App.css';
 import RegisterForm from './RegisterForm';
 import LoginForm from './LoginForm';
@@ -15,7 +16,6 @@ function App() {
   const [registerError, setRegisterError] = useState('');
   const [loginError, setLoginError] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [usercreated, setUserCreated] = useState(false);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [activeTab, setActiveTab] = useState('register');
@@ -200,11 +200,15 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      fetchProjects();
-    }
-  }, [isLoggedIn]);
+ useEffect(() => {
+  if (!isLoggedIn) return;
+
+  async function loadProjects() {
+    await fetchProjects();
+  }
+
+  loadProjects();
+}, [isLoggedIn]);
 
   function handleLogout() {
     localStorage.removeItem('token');
@@ -502,11 +506,12 @@ function App() {
   }
 
   return (
-    <div className="app-shell">
+    <div id="app-shell" className="app-shell">
+  
       {isLoggedIn && (
         <>
           <button
-            className="top-action-btn"
+            id="logout-button" className="top-action-btn"
             onClick={handleLogout}
           >
             {username} - Logout
@@ -570,37 +575,6 @@ function App() {
 
       {!isLoggedIn && (
         <>
-          <div className="tab-row">
-            <button onClick={() => setActiveTab('register')}>
-              Register
-            </button>
-            <button onClick={() => setActiveTab('login')}>
-              Login
-            </button>
-          </div>
-
-          {activeTab === 'register' ? (
-            <button
-              className="switch-btn"
-              onClick={() => {
-                setUserCreated(true);
-                setActiveTab('login');
-              }}
-            >
-              Already have an account? Login here
-            </button>
-          ) : (
-            <button
-              className="switch-btn"
-              onClick={() => {
-                setUserCreated(false);
-                setActiveTab('register');
-              }}
-            >
-              Don't have an account? Register here
-            </button>
-          )}
-
           {activeTab === 'register' ? (
             <>
               <RegisterForm
@@ -611,6 +585,8 @@ function App() {
                 setUsername={setRegisterUsername}
                 username={registerUsername}
                 handleSubmitRegister={handleSubmitRegister}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
               />
               {registerError && <p className="error-text">{registerError}</p>}
             </>
@@ -622,6 +598,8 @@ function App() {
                 setEmail={setLoginEmail}
                 setPassword={setLoginPassword}
                 handleSubmitLogin={handleSubmitLogin}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
               />
               {loginError && <p className="error-text">{loginError}</p>}
             </>

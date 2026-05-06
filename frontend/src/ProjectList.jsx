@@ -40,7 +40,7 @@ function ProjectList({
   handleChangeStatus,
 }) {
   return (
-    <div className="project-list">
+    <div id="project-list-section" className="project-list">
       <div className="section-title-row">
         <h2>All Projects</h2>
         <span>{projects.length} project{projects.length === 1 ? '' : 's'}</span>
@@ -49,11 +49,11 @@ function ProjectList({
       {projects.length === 0 ? (
         <p className="empty-text">No projects yet. Create your first project above.</p>
       ) : (
-        <div className="project-grid">
+        <div id="project-grid" className="project-grid">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="project-box"
+              className="project-box project-card"
               style={{ borderLeft: `10px solid ${project.color || '#3b82f6'}` }}
               onClick={() => openTasks(project)}
             >
@@ -128,8 +128,8 @@ function ProjectList({
       )}
 
       {selectedProject && (
-        <div className="task-overlay" onClick={closePopup}>
-          <div className="task-popup" onClick={(e) => e.stopPropagation()}>
+        <div id="task-overlay" className="task-overlay" onClick={closePopup}>
+          <div id="task-popup" className="task-popup" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={closePopup}>
               ×
             </button>
@@ -171,7 +171,7 @@ function ProjectList({
 
             {showTaskForm && isOwner && (
               <form
-                className="task-form"
+                id="task-form" className="task-form"
                 onSubmit={editingTaskId ? handleUpdateTask : handleCreateTask}
               >
                 <input
@@ -231,12 +231,12 @@ function ProjectList({
               </form>
             )}
 
-            <div className="task-list">
+            <div id="task-list" className="task-list">
               {tasks.length === 0 ? (
                 <p className="empty-text">No tasks yet</p>
               ) : (
                 tasks.map((task) => (
-                  <div key={task.id} className={`task-item status-${task.status || 'todo'}`}>
+                  <div key={task.id} className={`task-item task-card status-${task.status || 'todo'}`}>
                     <div className="task-main">
                       <h4>{task.name}</h4>
                       <p>{task.description || 'No description'}</p>
